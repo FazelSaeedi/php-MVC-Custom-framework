@@ -1,0 +1,15 @@
+{
+    "name": "strix/mvc-craete",
+    "authors": [
+        {
+            "name": "Fazel Saeedi",
+            "email": "FazelSaeedi@iran.ir"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\" : "./"
+        }
+    },
+    "require": {}
+}
