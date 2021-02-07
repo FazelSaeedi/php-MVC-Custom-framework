@@ -1,0 +1,10 @@
+{
+    "name": "strix/public",
+    "authors": [
+        {
+            "name": "Fazel Saeedi",
+            "email": "FazelSaeedi@iran.ir"
+        }
+    ],
+    "require": {}
+}

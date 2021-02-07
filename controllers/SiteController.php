@@ -46,6 +46,7 @@ class SiteController extends Controller
 
     // print_r($_POST);
 
+    return 'hi';
 
     $data = [
       'hi' => 'salam' ,
@@ -59,13 +60,13 @@ class SiteController extends Controller
     // return json_encode($data);
 
 
-    $data = file_get_contents('php://input');
+    //$data = file_get_contents('php://input');
 
-    $decodedText = html_entity_decode($data);
-    $myArray = json_decode($decodedText, true);
+    //$decodedText = html_entity_decode($data);
+    //$myArray = json_decode($decodedText, true);
 
 
-    print_r($myArray['2']['3']);
+    //print_r($myArray['2']['3']);
   }
 
 
