@@ -23,4 +23,9 @@ class AuthController extends Controller
     return 'this is handle register' ;
   }
 
+  public function test()
+  {
+    return 'test';
+  }
+
 }

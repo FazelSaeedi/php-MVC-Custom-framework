@@ -25,6 +25,7 @@ $app->router->post('/json' , [SiteController::class , 'Json']);
 $app->router->post('/login' , [AuthController::class , 'login']);
 $app->router->post('/register' , [AuthController::class , 'register']);
 
+$app->router->get('auth/test' , [AuthController::class , 'test']);
 
 
 $app->run();
