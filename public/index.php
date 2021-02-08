@@ -18,7 +18,7 @@ $app->router->get('/contact' , [SiteController::class , 'contact']);
 
 
 $app->router->post('/contact' , [SiteController::class , 'handlecontect']);
-$app->router->post('/json' , [SiteController::class , 'Json']);
+$app->router->get('/json' , [SiteController::class , 'Json']);
 
 
 

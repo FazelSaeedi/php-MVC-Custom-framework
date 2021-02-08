@@ -45,7 +45,6 @@ class Router
 
 
 
-
     if ($callback === false) {
 
        $this->response->setStatusCode(404);
