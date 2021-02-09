@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\core\Controller;
+use app\core\middlewares\authMiddleware;
 use app\core\Request;
 use app\core\Response;
 use app\model\User;
@@ -14,7 +15,11 @@ class AuthController extends Controller
 
   public function __construct()
   {
-      $this->repositoryPDO = new testRepositoryPDO();
+
+
+    $this->repositoryPDO = new testRepositoryPDO();
+
+
   }
 
   public function login(Request $request)
@@ -32,6 +37,8 @@ class AuthController extends Controller
   public function register(Request $request)
   {
 
+     new authMiddleware($request);
+
      $user = new User();
      $user->loadData($request->getBody());
 
@@ -39,8 +46,6 @@ class AuthController extends Controller
     if(!$user->validate() )
         return Response::Json($user->errors , 404);
 
-
-    // $user->register();
 
      return  $this->repositoryPDO->addUser($user->email ,$user->firstname, $user->lastname , $user->password);
 
