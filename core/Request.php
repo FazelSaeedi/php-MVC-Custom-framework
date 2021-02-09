@@ -59,4 +59,16 @@ class Request
       return $body;
   }
 
+
+  public function getHeader($name)
+  {
+    $headers = apache_request_headers();
+
+    foreach ($headers as $header => $value) {
+      if ($header == $name) {
+        return $value ;
+      }
+    }
+  }
+
 }
