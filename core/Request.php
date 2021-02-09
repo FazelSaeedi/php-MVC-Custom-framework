@@ -9,7 +9,7 @@ class Request
   public function getPath()
   {
     // $path = $_SERVER['REQUEST_URI'] ?? '/' ;
-    $path = '/'. $_GET['url'] ?? '/' ;
+    $path = '/'. @$_GET['url'] ?? '/' ;
 
 
     $position = strpos($path , '?');
