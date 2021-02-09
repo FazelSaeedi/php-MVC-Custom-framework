@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\core\Request;
 use app\core\Response;
-use app\model\RegisterModel;
+use app\model\User;
 use app\Repository\testRepositoryPDO;
 
 class AuthController extends Controller
@@ -32,7 +32,7 @@ class AuthController extends Controller
   public function register(Request $request)
   {
 
-     $registerModel = new RegisterModel();
+     $registerModel = new User();
      $registerModel->loadData($request->getBody());
 
 
