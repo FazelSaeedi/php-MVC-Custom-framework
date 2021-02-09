@@ -2,11 +2,20 @@
 
 namespace app\Repository;
 
+use app\core\DB;
+use app\model\User;
+
 class testRepositoryPDO implements testRepositoryInterface
 {
 
-  public function test()
+  public function addUser($email, $firstname, $lastname , $password )
   {
-    return 'test repository is ok';
+
+    $sql = "insert into users (email, firstname, lastname, password ) VALUES (?,?,?,?)";
+    $value = array($email, $firstname, $lastname , $password );
+
+    return DB::doQuery($sql, $value);
+
+
   }
 }

@@ -32,16 +32,17 @@ class AuthController extends Controller
   public function register(Request $request)
   {
 
-     $registerModel = new User();
-     $registerModel->loadData($request->getBody());
+     $user = new User();
+     $user->loadData($request->getBody());
 
 
-    if(!$registerModel->validate())
-        return Response::Json($registerModel->errors , 404);
+    if(!$user->validate() )
+        return Response::Json($user->errors , 404);
 
 
+    // $user->register();
 
-    return $this->repositoryPDO->test();
+     return  $this->repositoryPDO->addUser($user->email ,$user->firstname, $user->lastname , $user->password);
 
 
   }
